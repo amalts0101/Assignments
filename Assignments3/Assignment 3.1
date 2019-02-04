@@ -1,0 +1,63 @@
+1.PROC 
+
+A Proc object is a block of code that has been bound to a set of local variables.
+
+We can pass values into the proc using .call 
+
+When you call parameters on a Proc you get to see information about the parameters that make up the Proc.
+
+The standard procedure for a Proc is to ignore any parameters that it doesn’t require. 
+
+Example : 
+
+##########################################
+def pass(num1)
+	return Proc.new {|n| num1 + n }
+end
+
+add1  = pass(5)
+add2 = pass(3)
+
+add1.call(10)
+add2.call(20) 
+###########################################
+
+
+2.LAMBDA
+
+A lambda is also commonly referred to as an anonymous function.
+
+To create a lambda in Ruby, you can use the following syntax:
+
+lambda = lambda {}  
+
+Both the lambda and the Proc behave in somewhat the same way.
+
+When a lambda expects an argument, you need to pass those arguments or an Exception will be thrown. 
+
+
+Eg : 
+
+
+##################################
+
+lambda = -> (name) { puts "Hello #{name}" }
+lambda.call("Amal")  
+
+##################################
+
+3.BLOCK
+
+Block can accept arguments and returns a value. Block does not have their own name. Block consist of chunks of code. A block is always invoked with a function or can say passed to a method call. To call a block within a method with a value, yield statement is used. Blocks can be called just like methods from inside the method that it is passed to.
+
+Eg:
+
+##########################################
+
+["Geeks", "GFG", 55].each do |n|    
+ puts n    
+end   
+
+
+##########################################
+
