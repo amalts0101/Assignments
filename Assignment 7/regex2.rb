@@ -1,5 +1,5 @@
 e = "demo@rubyians.com"
-p /\w{1,}@\w{1,}.[a-z]{2,3}/.match(e)
+p /\w+@\w+\.[a-z]{2,3}/.match(e)
 
 f = "123456,56877422"
 p /\d{6}/.match(f)

@@ -3,7 +3,7 @@ p /\d{3,5}/.match(a)
 
 
 b = "hellogirlhelloboy"
-p /hello/.match(b)
+p /^hello/.match(b)
 
 c = "hello123four"
 p /hello123/.match(c)
