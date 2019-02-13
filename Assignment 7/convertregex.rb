@@ -5,7 +5,7 @@ if /^\+(?:[0-9]){12}/.match(a)
   p a
 end
 
-if /\w{1,}@\w{1,}.[a-z]{3}/.match(a)
+if /\w+@\w+\.[a-z]{3}/.match(a)
   a.gsub!(a,'demo@example.com')
   p a
 end
@@ -15,22 +15,13 @@ if /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/
   p a
 end
 
-counter1 = 0 
-if a.scan(/\n/) { |match| counter1 += 1   };end
+p "Number of lines is #{a.scan(/\n/).count}"
 
-p "Number of lines are #{counter1}"
+p "Number of 'is' are #{a.scan(/is/i).count}"
 
-iscounter = 0
-if a.scan(/is/i) { |match| iscounter += 1 };end
-p "Number of 'is' #{iscounter}"
+p "Number of 'the' are #{a.scan(/the/i).count}"
 
-thecounter = 0 
-if a.scan(/the/i) { |match| thecounter += 1 };end
-p "Number of 'the' #{thecounter}"
-
-andcounter = 0 
-if a.scan(/and/i) { |match| andcounter += 1 };end
-p "Number of 'and' #{andcounter}"
+p "Number of 'and' are #{a.scan(/and/i).count}"
 
 
 
